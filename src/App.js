@@ -8,8 +8,8 @@ import ShopPage from './pages/shop/shop.component';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = { currentUser: null };
   }
 
@@ -26,10 +26,10 @@ class App extends React.Component {
                 id: snapShot.id,
                 ...snapShot.data(),
               },
-            },
-            () => {
-              console.log(this.state);
             }
+            // () => {
+            //   console.log(this.state);
+            // }
           );
         });
       } else {
